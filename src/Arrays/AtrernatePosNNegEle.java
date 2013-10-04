@@ -37,7 +37,6 @@ public class AtrernatePosNNegEle {
 		
 		int g=0, l=A.length;
 		while(f<l && g<l && A[g]<0){
-			
 			swap(A, g, f);
 			g+=2;
 			f++;
