@@ -8,23 +8,23 @@ package Arrays;
 public class DuplicateEleNTime1Space {
 
 	public static void main(String[] args){
-		int []A={1,5,1,0,0,2,5,1,2,4,4};
+		int []A={3,3,3,0,0,2,5,1,2,4,4};
 		dupEle(A);
 	}
 	
 	static void dupEle(int []A){
 		int l=A.length;
 		for(int i=0; i<l; i++){
-			if(A[Math.abs(A[i])]>0 && A[Math.abs(A[i])]<l){
-				A[Math.abs(A[i])]*=(-1);
+			if(A[Math.abs(A[i])%l]>0 && A[Math.abs(A[i])%l]<l){
+				A[Math.abs(A[i])%l]*=(-1);
 			}
-			if(A[Math.abs(A[i])]<0){
-				A[Math.abs(A[i])]=A[Math.abs(A[i])]*(-1)+l;
+			else if(A[Math.abs(A[i])%l]<0){
+				A[Math.abs(A[i])%l]=A[Math.abs(A[i])%l]*(-1)+l;
 			} 
-			if(A[Math.abs(A[i])%l]==0){
+			else if(A[Math.abs(A[i])%l]==0){
 				A[Math.abs(A[i])%l]+=l;
 			}
-			if(A[Math.abs(A[i])%l]>=l){
+			else if(A[Math.abs(A[i])%l]>=l){
 				A[Math.abs(A[i])%l]+=l;
 			}
 		}
