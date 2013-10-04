@@ -29,33 +29,20 @@ public class AtrernatePosNNegEle {
 		while(A[k]<0){
 			k++;
 		}
-		int []N=new int [k];
-		int []P=new int [A.length-k];
-		while(h<A.length){
-			if(A[h]<0){
-				N[h]=A[h];
-			}
-			if(A[h]>0){
-				P[h-k]=A[h];
-			}
-			h++;
-		}
 		
-		quickSort(N, 0, N.length-1);
-		quickSort(P, 0, P.length-1);
+		int f=k;
+		quickSort(A, 0, k-1);
+		quickSort(A, k, A.length-1);
 		
 		
-		int p=0, n=0, a=0;
-		while(p<P.length && n<N.length){
-			A[a++]=N[n++];
-			A[a++]=P[p++];
+		int g=0, l=A.length;
+		while(f<l && g<l && A[g]<0){
+			
+			swap(A, g, f);
+			g+=2;
+			f++;
 		}
-		while(p<P.length){
-			A[a++]=P[p++];
-		}
-		while(n<N.length){
-			A[a++]=N[n++];
-		}
+		
 		
 		return A;
 	}
