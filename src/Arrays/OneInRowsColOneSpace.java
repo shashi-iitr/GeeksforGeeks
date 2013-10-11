@@ -8,7 +8,7 @@ package Arrays;
 public class OneInRowsColOneSpace {
 
 	public static void main(String[] args){
-		int [][]A={{0,0,0,0},{0,0,1,0},{0,0,0,0},{0,0,0,0}};
+		int [][]A={{1,0,0,0},{0,0,1,0},{0,0,0,0},{0,0,0,1}};
 		int l=A.length;
 		print(A, l);
 		System.out.println();
@@ -22,30 +22,45 @@ public class OneInRowsColOneSpace {
 		for(int i=0; i<n; i++){
 			for(int j=0; j<n; j++){
 				if(A[i][j]==1){
-					A[0][j]=-1;
-					
+					A[0][j]-=2;
 				}
 			}
 		}
+		
 		for(int j=0; j<n; j++){
 			for(int i=0; i<n; i++){
 				if(A[i][j]==1){
-					A[i][0]=-1;
+					A[i][0]-=2;
 					
 				}
 			}
 		}
 		
-		for(int i=0; i<n; i++){
-			if(A[i][0]==-1){
-				for(int j=0; j<n; j++){
-					A[i][j]=1;
+		for(int i=1; i<n; i++){
+			if(A[i][0]<0){
+				for(int j=1; j<n; j++){
+					A[i][j]-=2;
 				}
 			}
 		}
-		for(int j=0; j<n; j++){
-			if(A[0][j]==-1){
-				for(int i=0; i<n; i++){
+		for(int j=1; j<n; j++){
+			if(A[0][j]<0){
+				for(int i=1; i<n; i++){
+					A[i][j]-=2;
+				}
+			}
+		}
+		if(A[0][0]<0){
+			for(int i=1; i<n; i++){
+				A[i][0]-=2;
+			}
+			for(int j=1; j<n; j++){
+				A[0][j]-=2;
+			}
+		}
+		for(int i=0; i<n; i++){
+			for(int j=0; j<n; j++){
+				if(A[i][j]<0){
 					A[i][j]=1;
 				}
 			}

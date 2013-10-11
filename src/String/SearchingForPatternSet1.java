@@ -8,11 +8,12 @@ public class SearchingForPatternSet1 {
 		searchStr(S, S1);
 	}
 	
+	
 	static void searchStr(String S, String S1){
 		int ls=S.length();
 		int ls1=S1.length();
-		int i=0, j=0, l=ls-1;
-		while(i<l){
+		int i=0, j=0;
+		while(i<ls-1){
 			int count=0;
 			while(j<ls1 && i<ls){
 				if(S1.charAt(j++)==S.charAt(i++)){
@@ -23,7 +24,6 @@ public class SearchingForPatternSet1 {
 					}
 					
 				}else {
-					//i=i+count;
 					count=0;
 					j=0;
 				}

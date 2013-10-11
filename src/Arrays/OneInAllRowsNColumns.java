@@ -7,7 +7,7 @@ package Arrays;
 public class OneInAllRowsNColumns {
 
 	public static void main(String[] args){
-		int [][]A={{0,0,0,0},{0,0,1,0},{0,0,0,0},{0,0,0,0}};
+		int [][]A={{1,0,0,0},{0,0,1,0},{0,0,0,0},{0,0,0,1}};
 		int l=A.length;
 		print(A, l);
 		System.out.println();

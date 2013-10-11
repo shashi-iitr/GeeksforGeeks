@@ -1,4 +1,5 @@
 //Given a boolean 2D array, where each row is sorted. 
+
 //Find the row with the maximum number of 1s.
 
 package Arrays;
@@ -6,10 +7,39 @@ package Arrays;
 public class RowWithMaxOne {
 
 	public static void main(String[] args){
-		int [][]A={{0, 0, 0, 0},{0, 0, 1, 1},{0, 0,0,0},{0,0,0,0}};
+		int [][]A={{0,0,0,1},{0, 0, 0, 1},{0, 0,1,1},{0,0,0,1}};
+		int n=A.length;
+		int m=A[0].length;
 		int b=maxOne(A);
-		System.out.print(b+" ");
-		maxOneInRow(A, 4, 4);
+		System.out.println(b+" ");
+		maxOneInRow(A, m, n);
+		System.out.println();
+		maxRowOne(A, m, n);
+	}
+	
+	static void maxRowOne(int [][]A, int m, int n){
+		int i=0, j=m-1, k=-1;
+		while(i<m && j>-1){
+			if(A[i][j]==1){
+				while(j>-1 && A[i][j]==1){
+					j--;
+					k=i;
+				}
+				j++;
+				if(j==0){
+					System.out.print(i);
+					return;
+				} else if(j>0){
+					i++;
+				}
+			} else if(i<m && A[i][j]==0){
+				i++;
+			}
+			if(i==m-1 && A[i][j]==0){
+				System.out.print(k);
+				return;
+			}
+		}
 	}
 	
 	
@@ -27,7 +57,8 @@ public class RowWithMaxOne {
 					k=i;
 				}
 				j--;
-			} if(A[i][j]==0){
+			} 
+			if(A[i][j]==0){
 				if(i==n-1){
 					System.out.print(k+" ");
 					return;

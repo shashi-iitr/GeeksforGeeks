@@ -1,3 +1,5 @@
+//Remove all duplicates from the input string.
+
 package String;
 
 public class RemoveDuplicateFromString {

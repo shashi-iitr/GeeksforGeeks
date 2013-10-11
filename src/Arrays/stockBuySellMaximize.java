@@ -7,10 +7,34 @@ public class stockBuySellMaximize {
 
 	public static void main(String[] args){
 		int [] A={7,6,5,4,3,100, 180, 260, 910, 40, 535, 695, 34, 290};
-		stockMax(A, A.length);
+		int l=A.length;
+		
+		stock(A, l);
 		System.out.println();
-		stockMaxN2(A, 0, A.length);
+		stockMax(A, l);
+		System.out.println();
+		stockMaxN2(A, 0, l);
+		
+		
+		
 	}
+	
+	static void stock(int []A, int l){
+		int profit=0, bdi=0, sdi=0;
+		for(int i=1; i<l; i++){
+			for(int j=i; j<l; j++){
+				if(A[j]-A[i]>profit){
+					profit=A[j]-A[i];
+					bdi=i;
+					sdi=j;
+					
+				}
+			}
+		}
+		System.out.println(bdi +" "+sdi);
+		
+	}
+	
 	
 	//O(n)
 	static void stockMax(int []A, int l){

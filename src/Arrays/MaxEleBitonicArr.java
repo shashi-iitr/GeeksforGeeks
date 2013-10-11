@@ -3,7 +3,7 @@ package Arrays;
 public class MaxEleBitonicArr {
 
 	public static void main(String[] args){
-		int []A={1, 3, 5, 10, 9,12,7, 6};
+		int []A={1, 3, 5,6,9,10, 9,7, 6};
 		int l=A.length;
 		int b=maxEle(A,0,l-1);
 		System.out.print(b);

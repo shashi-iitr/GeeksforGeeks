@@ -3,7 +3,7 @@ package Recursion;
 public class handShake {
 
 	public static void main(String[] args){
-		long n=10;
+		long n=6;
 		long b=handShake(n);
 		System.out.println(b);
 		

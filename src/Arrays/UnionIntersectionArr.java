@@ -2,10 +2,10 @@
 
 package Arrays;
 
-public class unionIntersectionArr {
+public class UnionIntersectionArr {
 	public static void main(String [] args){
 		int []A={1,3,5,6,7,8,9};
-		int []B={2,3,6};
+		int []B={1,2,3,6,11};
 		int la=A.length;
 		int lb=B.length;
 		uniInt(A, la, B, lb);
@@ -27,7 +27,18 @@ public class unionIntersectionArr {
 				System.out.print(i+" ");
 				dubCount++;
 			}
+			
 		}
+		System.out.println();
+		System.out.print("union= ");
+		for(int i=0; i<C.length; i++){
+			if(C[i]>0){
+				System.out.print(i+" ");
+				dubCount++;
+			}
+		}
+		
+		/*
 		int ld=la+lb-dubCount;
 		int []D=new int [ld];
 		int i=0, j=0, k=0;
@@ -55,7 +66,7 @@ public class unionIntersectionArr {
 		System.out.print("union= ");
 		for(int g=0; g<ld; g++){
 			System.out.print(D[g]+" ");
-		}
+		}*/
 	}
 	
 	static int max(int a, int b){

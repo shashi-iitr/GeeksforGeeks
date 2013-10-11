@@ -16,6 +16,25 @@ public class RepeatTwoEle {
 		repEle(A);
 		System.out.println();
 		repEleHash(A);
+		System.out.println();
+		repEle1Space(A);
+	}
+	
+	static void repEle1Space(int []A){
+		int l=A.length;
+		for(int i=0; i<l; i++){
+			if(A[Math.abs(A[i])]>0){
+				A[Math.abs(A[i])]*=-1;
+			} else if(A[Math.abs(A[i])]<0){
+				A[Math.abs(A[i])]*=-1;
+			}
+		}
+		
+		for(int j=1; j<l-1; j++){
+			if(A[j]>0){
+				System.out.print(j+" ");
+			}
+		}
 	}
 	
 	static void repEleHash(int []A){

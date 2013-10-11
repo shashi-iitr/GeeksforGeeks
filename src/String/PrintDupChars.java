@@ -1,3 +1,5 @@
+// Print all the duplicates in the input string.
+
 package String;
 
 public class PrintDupChars {

@@ -5,9 +5,9 @@ package Arrays;
 public class MedianTwoSortedArray {
 
 	public static void main(String[] args){
-		int []A={3, 5, 9, 10, 15, 20, 21, 23};
+		int []A={2,4,9,12,15,18};
 		int la=A.length;
-		int []B={2, 5, 8, 11, 13, 19};
+		int []B={1,5,7,11,16,19};
 		int lb=B.length;
 		mergeArr(A, la, B, lb);
 	}

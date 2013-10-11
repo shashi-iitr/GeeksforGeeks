@@ -10,7 +10,7 @@ public class SubsetArr {
 
 	public static void main(String[] args) {
 		int[] A = { 5, 4, 9, 2, 1, 3 };
-		int[] B = { 4, 3, 1 };
+		int[] B = { 4, 7, 1 };
 		
 		if(isSubsetHash(A, B)){
 			System.out.print("true for hashed");
@@ -50,16 +50,18 @@ public class SubsetArr {
 			return false;
 		}
 
-		int[] C = new int[maxA+1];
+		int[] C = new int[maxB+1];
 		for (int i = 0; i < la; i++) {
-			C[A[i]] = -1;
+			if(A[i]<=maxB){
+				C[A[i]] = 1;
+			}
 		}
 		for (int i = 0; i < lb; i++) {
 			C[B[i]] *= (-1);
 		}
 		int count = 0;
-		for (int i = 0; i < la; i++) {
-			if (C[i] == 1) {
+		for (int i = 0; i < C.length; i++) {
+			if (C[i] <0) {
 				count++;
 			}
 		}

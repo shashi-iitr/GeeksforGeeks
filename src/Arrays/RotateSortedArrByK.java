@@ -4,10 +4,10 @@ public class RotateSortedArrByK {
 
 	public static void main(String [] args){
 		int []A={1,2,3,4,5,6,7};
-		int k=5;
+		int k=4;
 		int [] b=rotateArr(A, k);
-		for(int i=0; i<A.length; i++){
-			System.out.print(b[i]+" ");
+		for(int i:b){
+			System.out.print(i+" ");
 		}
 	}
 	
@@ -32,7 +32,6 @@ public class RotateSortedArrByK {
 					h--;
 				}
 				l--;
-			
 		}
 		return A;
 	}

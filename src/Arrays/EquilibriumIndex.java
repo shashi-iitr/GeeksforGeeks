@@ -19,12 +19,12 @@ public class EquilibriumIndex {
 		for(int i=0; i<l; i++){
 			s+=A[i];
 		}
-		int ts=s;
+		int ts=0;
 		for(int i=0; i<l-1; i++){
-			ts-=A[i];
+			ts+=A[i];
 			
-			if(ts==(s-A[i])/2){
-				System.out.print(i+" ");
+			if(ts*2+A[i+1]==s){
+				System.out.print(i+1+" ");
 			}
 		}
 	}

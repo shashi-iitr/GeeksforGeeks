@@ -15,21 +15,21 @@ public class Palindrome {
 	static boolean palindrome(int b){
 		int a=b;
 		int d=a;
-		int count=0;
-		while(a>0){
+		int count=0, h=(int) Math.log10(a);
+		/*while(a>0){
 			a=a/10;
 			count++;
-		}
-		int []A=new int [count];
+		}*/
+		//int []A=new int [count];
+		int []A=new int [h+1];
 		int i=0;
 		while(d>0){
 			A[i]=d%10;
 			d=d/10;
 			i++;
-			
 		}
 		int s=0;
-		for(int j=0; j<count; j++){
+		for(int j=0; j<=h; j++){
 			s=s*10+A[j];
 		}
 		

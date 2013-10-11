@@ -8,15 +8,17 @@ public class RemoveBAndAC {
 		String S="acacbahcacb";
 		
 		String b=remACnB(S);
-		System.out.println(b);
+		System.out.print("b= "+b);
 		
 		String a=remBnAC(S);
-		System.out.println(a);
+		System.out.println("a= "+a);
 	}
 	
 	
 	static String remBnAC(String S){
 		String c="";
+		StringBuffer sb=new StringBuffer();
+		
 		int l=S.length();
 		int i=0;
 		while(i<=l-1){
@@ -26,10 +28,12 @@ public class RemoveBAndAC {
 				}
 				i++;
 			} else{ 
+				sb=sb.append(S.charAt(i));
 				c=c+S.charAt(i);
 				i++;
 			}
 		}
+		System.out.println("\nsb= "+sb);
 		return c;
 	}
 	

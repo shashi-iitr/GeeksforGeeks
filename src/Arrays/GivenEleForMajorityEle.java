@@ -8,21 +8,22 @@ import java.util.Map.Entry;
 public class GivenEleForMajorityEle {
 
 	public static void main(String[] args){
-		int[]A={2, 2, 3, 3, 3, 3, 10};
+		int[]A={2, 2, 3, 3, 3,3, 10};
 		int x=3, l=A.length;
 		int j=searchEleX(A, 0, l-1, x);
 		if(j==-1){
 			System.out.println("x is not a major element");
 		}
+		System.out.print(j);
 		if(isExistX(A, j, l-1, x)){
 			System.out.println("x is major element");
 		} else
 			System.out.println("x is not a major element");
 		
 		if(xMajor(A, x, l-1)){
-			System.out.println("x is major element");
+			System.out.println("x is major element hashed");
 		} else
-			System.out.println("x is not a major element");
+			System.out.println("x is not a major element hashed");
 		
 		
 	}
@@ -35,18 +36,20 @@ public class GivenEleForMajorityEle {
 			return false;
 	}
 	
-	static int searchEleX(int [] A, int i, int l, int x){
-		int mid=(i+l)/2;
-		if(i<0 || l<0 || l<i){
+	static int searchEleX(int [] A, int low, int high, int x){
+		int mid=(low+high)/2;
+		if(low<0 || high<0 || high<low){
 			return -1;
 		}
-		if(A[mid]==x){
+		
+		if(mid ==low && A[mid]==x || A[mid]==x && A[mid-1]<x){
 			return mid;
-		} else if(A[mid]<x){
-			return searchEleX(A, mid+1, l, x);
+		}
+		else if(A[mid]<x){
+			return searchEleX(A, mid+1, high, x);
 		}
 		else
-			return searchEleX(A, i, mid-1, x);
+			return searchEleX(A, low, mid-1, x);
 	}
 	
 	

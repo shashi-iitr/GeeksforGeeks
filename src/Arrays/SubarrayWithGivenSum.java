@@ -7,9 +7,10 @@ package Arrays;
 public class SubarrayWithGivenSum {
 
 	public static void main(String[] args){
-		int []A={1, 4, 20, 3, 10, 5, 18};
-		int sum=33;
+		int []A={6,2,4,5,2,3,9,1};
+		int sum=13;
 		sumSubArr(A, sum);
+		System.out.println();
 		subArr(A, sum);
 	}
 	
@@ -17,22 +18,20 @@ public class SubarrayWithGivenSum {
 	static void sumSubArr(int []A, int sum){
 		int sumM=A[0], i=0,j, l=A.length;
 		for(j=1; j<l; j++){
+			if(j<l){
+				sumM+=A[j];
+			}
 			
 			while(sumM>sum && i<j-1){
 				sumM-=A[i];
 				i++;
 			}
 			if(sumM==sum){
-				System.out.println("(i= "+i+", j= "+(j-1)+") ");
-			}
-			
-			if(j<l){
-				sumM+=A[j];
+				System.out.print("(i= "+i+", j= "+j+") ");
 			}
 		}
 	}
-	
-	
+
 	
 	static void subArr(int []A, int sum){
 		int l=A.length;
@@ -41,11 +40,9 @@ public class SubarrayWithGivenSum {
 			for(int j=i+1; j<l; j++){
 				sumM+=A[j];
 				if(sumM==sum){
-					System.out.print("("+"i= "+i+", j= "+j+" ) ");
+					System.out.print("("+"i= "+i+", j= "+j+") ");
 				}
 			}
 		}
-	
-	
 	}
 }

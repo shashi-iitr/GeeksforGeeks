@@ -2,20 +2,22 @@
 
 package Arrays;
 
+import utility.QuickSort;
+
 public class PairSumEqualsX {
 
 	public static void main(String[] args){
-		int []A={5, 1, 3, 8, 6, 4, 3, 7, 2};
+		int []A={2,3,6,3,6,5,1,4};
 		int x=7;
 		
 		pairSumXN2(A, x);
 		System.out.println();
 		
 		int l=A.length;
-		quickSortA(A, 0, l-1);
+		new QuickSort().quickSort(A, 0, l-1);
 		pairSumX(A, x);
-		
 	}
+
 	
 	static void pairSumX(int []A, int x){
 		int l=A.length;
@@ -26,46 +28,22 @@ public class PairSumEqualsX {
 			}
 			if(A[i]+A[j]==x){
 				System.out.print("("+A[i]+" "+A[j]+") ");
-				i++;
-				j--;
+				if(A[i]==A[i+1]){
+					i++;
+				}
+				else if(A[j]==A[j-1]){
+					j--;
+				}
+				else if(A[i]!=A[i+1] && A[j]!=A[j-1]){
+					i++; j--;
+				}
 			}
 			if(A[i]+A[j]<x){
 				i++;
 			}
 		}
-		
 	}
 	
-	static void quickSortA(int []A, int p, int q){
-		if(p<q){
-			int x=partitionA(A, p, q);
-			quickSortA(A, p, x);
-			quickSortA(A, x+1, q);
-		}
-	}
-	
-	static int partitionA(int []A, int p, int q){
-		int  pivot=A[p], i=p, j=q;
-		while(i<j){
-			while(A[i]<pivot){
-				i++;
-			}
-			while(A[j]>pivot){
-				j--;
-			}
-			if(i<j){
-				swap(A, i, j);
-			} else return j;
-		}
-		
-		return j;
-	}
-	
-	static void swap(int []A, int a, int b){
-		int t=A[a];
-		A[a]=A[b];
-		A[b]=t;
-	}
 	
 	
 	

@@ -8,7 +8,7 @@ package Arrays;
 public class PairDiff {
 
 	public static void main(String[] args){
-		int []A={2,5,32,6,45,7};
+		int []A={2,5,32,6,37,7};
 		int x=5;
 		pairDiff(A, x);
 	}
@@ -19,7 +19,7 @@ public class PairDiff {
 		int i=0, j=1;
 		while(i<l && j<l){
 			if(A[j]-A[i]==x){
-				System.out.print(A[i]+" "+A[j]);
+				System.out.print(A[i]+" "+A[j]+" ");
 			}
 			if(A[j]-A[i]>x){
 				i++;
@@ -30,7 +30,7 @@ public class PairDiff {
 	static void quickSort(int []A, int p, int r){
 		if(p<r){
 			int q=partition(A, p, r);
-			quickSort(A, 0, q);
+			quickSort(A, 0, q-1);
 			quickSort(A, q+1, r);
 		}
 	}
@@ -38,7 +38,7 @@ public class PairDiff {
 	static int partition(int []A, int p, int r){
 		int x=A[p], i=p, j=r;
 		while(i<j){
-			while(A[i]<x){
+			while(A[i]<x && i<A.length-1){
 				i++;
 			}
 			while(A[j]>x){
@@ -48,6 +48,8 @@ public class PairDiff {
 				swap(A, i, j);
 			}
 		}
+		A[p]=A[j];
+		A[j]=x;
 		return j;
 	}
 	

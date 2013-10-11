@@ -7,7 +7,7 @@ public class InterleavingPrint {
 	public static void main(String[] args){
 		String s1="ab";
 		String s2="cd";
-		
+		intStr(s1, s2);
 	}
 	
 	static void intStr(String s1, String s2){
@@ -21,9 +21,11 @@ public class InterleavingPrint {
 		strInt(ch1, ch2, ch3, ls1, ls2, 0);
 	}
 	
-	static void strInt(, char[] ch2, char[] ch3, int ls1, int ls2, int i){
+	static void strInt(char []ch1, char[] ch2, char[] ch3, int ls1, int ls2, int i){
 		if(ls1==0 && ls2==0){
-			
+			for(int j=0; j<(ls1+ls2); j++){
+				System.out.print(ch3[j]+" ");
+			}
 		}
 		
 		if(ls1!=0){

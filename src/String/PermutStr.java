@@ -7,30 +7,24 @@ import java.util.List;
 public class PermutStr {
 
 	public static void main(String[] args){
-		char [] ch={'a','b','c','d'};
-		permStr(ch);
-		
-	}
-	
-	static void permStr(char[] ch){
-		int l=ch.length;
-		List<String> s1=new ArrayList<String>();
-		s1.add("");
-		List<String> s2=new ArrayList<String>();
-		
-		for(int i=0; i<l; i++){
-			for(String s:s1){
-				s2.addAll(sAppend(s,ch[i]));
+		List<String> allString =new ArrayList<String>();
+		allString.add(" ");
+		int len=0;
+		String S="abc";
+		char [] chs=S.toCharArray();
+		for(char ch:chs){
+			List<String> temp=new ArrayList<String>();
+			for(String s: allString){
+				int[] A;
+				if(len==0){
+					temp.add(chs.toString());
+				} else{
+					A=new int [len+1];
+							
+				}
+				
 			}
-			s1=s2;
-			s2=null;
 		}
-		System.out.print(s1);
-	}
-	
-	public static List<String> sAppend(String s, char c){
 		
-		
-		return null;
 	}
 }

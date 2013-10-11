@@ -5,7 +5,7 @@ package Arrays;
 public class SmallestMissingEle {
 
 	public static void main(String[] args) {
-		int[] A = {0, 1, 1, 2, 2, 2,3, 4, 5,10,11,12,13 };
+		int[] A = {2, 2, 2,3, 4,5};
 		int b = smallestMissingEle(A);
 		System.out.print(b);
 	}
@@ -13,9 +13,9 @@ public class SmallestMissingEle {
 	static int smallestMissingEle(int[] A) {
 		int l = A.length;
 		int i = 0;
-		if(A[0]!=0){
+		/*if(A[0]!=0){
 			return 0;
-		}
+		}*/
 		while (i<l-2 && (A[i] == A[i + 1] || A[i] == A[i+1] - 1 )) {
 			i++;
 		}

@@ -2,25 +2,27 @@
 public class PermutStringBackTracking {
 
 	public static void main(String[] args){
-		char[] ch={'A','B','C'};
-		int l=ch.length;
-		int i=0;
-		permString(ch, i, l);	
+		String S="abc";
+		char[] ch=S.toCharArray();
+		perm(ch, 0, S.length()-1);
 	}
 	
-	static void permString(char [] ch, int i, int l){
-		
-		int j;
+	
+	static void perm(char[] ch, int i, int l){
 		if(i==l){
-			System.out.print(ch);
-		}
-		else{
-			for(j=i; j<=l; j++){
-				swap(ch, i, j);
-				
+			for(char s: ch){
+				System.out.print(s);
 			}
-		}
+			System.out.println();
+		} else
+			for(int k=i; k<=l; k++){
+				swap(ch, i, k);
+				perm(ch, i+1, l);
+				swap(ch, i, k);
+			}
 	}
+	
+	
 	static char [] swap(char[] ch, int i, int j){
 		char t=ch[i];
 		ch[i]=ch[j];

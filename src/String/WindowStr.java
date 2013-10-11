@@ -43,7 +43,7 @@ public class WindowStr {
 						
 					 }
 					 if(countNew==lt){
-						 System.out.print(i-k+1+"i= "+i+" k= "+k);
+						 System.out.print(i-k+1+" i= "+i+" k= "+k);
 						 return;
 						 
 					 }
@@ -64,7 +64,7 @@ public class WindowStr {
 		}
 	}
 	
-	static boolean countAT(int [] AT){
+	/*static boolean countAT(int [] AT){
 		for(int i=0; i<26; i++){
 			if(AT[i]!=0){
 				return false;
@@ -72,5 +72,5 @@ public class WindowStr {
 			
 		}
 		return true;
-	}
+	}*/
 }
