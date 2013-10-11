@@ -1,5 +1,6 @@
 #Utility functions
 ready to be used
+
 1. Merge sort
 2. Quick sort
 3. Max between two numbers
